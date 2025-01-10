@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .home-wrapper {
   display: flex;
   flex-direction: column;
@@ -5,4 +7,59 @@
   height: 100%;
 
   padding: 34px 0;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      color: $primary-color;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p {
+      color: $text-primary;
+      font-size: 14px;
+      max-width: 264px;
+      margin-top: 5px;
+    }
+  }
+
+  .img-section {
+    display: flex;
+    flex-direction: column;
+
+    .sparkle {
+      position: absolute;
+      margin-left: 14px;
+    }
+  }
+
+  .button-wrapper{
+    display: flex;
+    justify-content: center;
+
+    button {
+      background-color: $primary-color;
+      width: 90%;
+      color: white;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      padding: 14px;
+
+      position: relative;
+
+      img {
+        position: absolute;
+        right: 2.5vh;
+      }
+
+    }
+  }
+
+
 }
