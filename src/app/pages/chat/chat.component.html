@@ -12,6 +12,10 @@
     </div>
   </header>
   <section class="chat">
-    <chat-suggestions></chat-suggestions>
+    <chat-suggestions
+      (questionSelected)="sendSuggestionQuestion($event)"
+      *ngIf="questions.length === 0"
+    >
+    </chat-suggestions>
   </section>
 </main>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {SearchComponent} from '../../../icons/search/search.component';
 import {QuestionComponent} from '../../../icons/question/question.component';
 import {CommonModule} from '@angular/common';
@@ -17,6 +17,7 @@ import {KeyComponent} from '../../../icons/key/key.component';
   standalone: true
 })
 export class ChatSuggestionsComponent {
+@Output() questionSelected = new EventEmitter();
 
   suggestionTopics = [
     {
@@ -50,5 +51,8 @@ export class ChatSuggestionsComponent {
 
   ]
 
+  selectQuestion(value: string) {
+    this.questionSelected.emit(value);
+  }
 
 }
