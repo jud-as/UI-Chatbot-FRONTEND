@@ -1,4 +1,4 @@
-<main>
+<main class="chat-wrapper">
   <header>
     <button (click)="openHome()">
       <icon-arrow-left></icon-arrow-left>
@@ -11,11 +11,12 @@
       </div>
     </div>
   </header>
-  <section class="chat">
+  <section class="chat-content">
     <chat-suggestions
       (questionSelected)="sendSuggestionQuestion($event)"
       *ngIf="questions.length === 0"
     >
     </chat-suggestions>
+    <chat-dialog [messages]="questions"></chat-dialog>
   </section>
 </main>

@@ -5,6 +5,8 @@ import {MapMuseumComponent} from '../../../icons/map-museum/map-museum.component
 import {Router} from '@angular/router';
 import {ChatSuggestionsComponent} from '../../components/chat-suggestions/chat-suggestions.component';
 import {CommonModule} from '@angular/common';
+import {Message} from '../../types/message.type';
+import {ChatDialogComponent} from '../../components/chat-dialog/chat-dialog.component';
 
 @Component({
   selector: 'app-chat',
@@ -13,7 +15,8 @@ import {CommonModule} from '@angular/common';
     ElipseComponent,
     MapMuseumComponent,
     ChatSuggestionsComponent,
-    CommonModule
+    CommonModule,
+    ChatDialogComponent
   ],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.scss'
@@ -22,10 +25,13 @@ export class ChatComponent {
   constructor(private router: Router) {
   }
 
-  questions: string[] = [];
+  questions: Message[] = [];
 
   sendSuggestionQuestion(question: string) {
-    this.questions.push(question);
+    this.questions.push({
+      type: 'request',
+      message: question
+    })
   }
 
   openHome() {
